@@ -10,7 +10,7 @@ def password(request):
     context = {'password': strong_password}
     return render(request, 'main/password.html', context)
 
-def generate_strong_password(length=12):
+def generate_strong_password(length=15):
     characters = string.ascii_letters + string.digits + string.punctuation
     while True:
         password = ''.join(secrets.choice(characters) for _ in range(length))
